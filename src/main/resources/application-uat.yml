@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/DXC_DEMO?useSSL=false&serverTimezone=UTC
+    username: root
+    password: password123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      leak-detection-threshold: 2000
+      #default maximum-pool-size:
+      #default minimum-idle:
+      #default idle-timeout:
+      #default max-lifetime:
