@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    default: dev
+  application:
+    name: login_application
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
