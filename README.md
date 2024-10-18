@@ -3,7 +3,7 @@
 >> ### Features
 >> - User login/logout functionality
 >> - Role-based access control (User, Manager)
->> - Account creation (To facilitate testing)
+>> - Account creation (To facilitate demo testing)
 >> - Multi-language support (English, Malay, Mandarin, Tamil)
 >> - Secure password hashing
 >
