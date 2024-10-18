@@ -16,6 +16,10 @@
 >>     - H2 Database (for demo contingency)
 >> - **Markup and Styling**: HTML, CSS
 >
+>> ### Installation Pre-requisites
+>> 1. Java 21 JDK
+>> 2. Maven 3.9.5 or higher
+>
 >> ### MySQL Database Setup
 >> 1. Access MySQL via the workbench / command line interface
 >> 2. Create a schema: `CREATE DATABASE DXC_DEMO;`
