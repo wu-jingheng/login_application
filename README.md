@@ -1,4 +1,4 @@
-## This application allows users to log in with their credentials and provides role-based access control.
+## A sample application for role-based access control with multi-language support
 
 >> ### Features
 >> - User login/logout functionality
