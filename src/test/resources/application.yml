@@ -1,35 +1,20 @@
-# Spring configuration properties
+# Spring configuration properties for testing
 spring:
-  profiles:
-    default: dev
-  application:
-    name: login_application
+  datasource:
+    url: jdbc:h2:mem:DXC_DEMO
+    username: sa
+    password:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
+    defer-datasource-initialization: true
   sql:
     init:
       mode: always
       data-locations: classpath*:data.sql
   messages:
     encoding: UTF-8
-
-# Server properties
-server:
-  error:
-    include-message: always
-    include-binding-errors: always
-  servlet:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
-
-# Logging properties
-logging:
-  level:
-    org.springframework.security: TRACE
 
 # Application specific properties
 app:

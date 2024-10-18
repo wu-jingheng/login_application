@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{register.tab-title}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+    <!-- Back arrow -->
+    <a href="/login" class="back-arrow">&larr;</a>
+
+    <h2 th:text="#{register.page-title}"></h2>
+
+    <!-- Error message (visible if save fails) -->
+    <div th:if="${error}" class="error-message">
+        <p th:text="#{register.error-message}"></p>
+    </div>
+
+    <!-- Success message (visible if save passes) -->
+    <div th:if="${success}" class="success-message">
+        <p th:text="#{register.success-message}"></p>
+    </div>
+
+    <!-- Registration form -->
+    <form action="/register_user" method="POST">
+        <label for="name" th:text="#{register.form-name}"></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="username" th:text="#{register.form-username}"></label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password" th:text="#{register.form-password}"></label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" th:value="#{register.form-submit}">
+    </form>
+
+    <!-- Link to login page -->
+    <a href="/login" class="login-link" th:text="#{register.login-link}"></a>
+</div>
+
+<!-- Language selector by fragment -->
+<div th:replace="fragment/language-selector :: languageSelector"></div>
+
+</body>
+</html>

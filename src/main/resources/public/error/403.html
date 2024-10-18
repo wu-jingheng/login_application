@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 Forbidden</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: #ff6b6b;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6b6b;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff4f4f;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            margin: 0;
+            color: #ffffff;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="error-code">403</div>
+    <h1>Access Denied</h1>
+    <p>Sorry, you don't have permission to access this page.</p>
+    <a href="/login" class="back-link">Return to landing</a>
+</div>
+</body>
+</html>

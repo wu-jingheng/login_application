@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{manager-exclusive.tab-title}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+    <!-- Back arrow -->
+    <a href="/user/home" class="back-arrow">&larr;</a>
+
+    <h2 th:text="#{manager-exclusive.page-title}"></h2>
+
+    <!-- Error message (visible if save fails) -->
+    <div th:if="${error}" class="error-message">
+        <p th:text="#{manager-exclusive.error-message}"></p>
+    </div>
+
+    <!-- Success message (visible if save passes) -->
+    <div th:if="${success}" class="success-message">
+        <p th:text="#{manager-exclusive.success-message}"></p>
+    </div>
+
+    <!-- Registration form -->
+    <form action="/register_user" method="POST">
+        <label for="name" th:text="#{manager-exclusive.form-name}"></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="username" th:text="#{manager-exclusive.form-username}"></label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password" th:text="#{manager-exclusive.form-password}"></label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Role dropdown -->
+        <label for="role" th:text="#{manager-exclusive.form-role}"></label>
+        <select id="role" name="role" class="language-selector">
+            <option value="User" th:text="#{manager-exclusive.select-form-role-user}"></option>
+            <option value="Manager" th:text="#{manager-exclusive.select-form-role-manager}"></option>
+        </select>
+
+        <button type="submit" th:text="#{manager-exclusive.form-submit}"></button>
+    </form>
+</div>
+
+<!-- Language selector by fragment -->
+<div th:replace="fragment/language-selector :: languageSelector"></div>
+
+</body>
+</html>
