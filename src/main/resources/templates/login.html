@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{login.tab-title}">Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+    <h2 th:text="#{login.page-title}"></h2>
+
+    <!-- Login error message -->
+    <div th:if="${error}" class="error-message">
+        <p th:text="#{login.error-message}"></p>
+    </div>
+
+    <!-- Logout message -->
+    <div th:if="${success}" class="success-message">
+        <p th:text="#{login.logout-message}"></p>
+    </div>
+
+    <!-- Login form -->
+    <form action="/login" method="POST">
+        <label for="username" th:text="#{login.form-username}"></label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password" th:text="#{login.form-password}"></label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" th:value="#{login.form-submit}">
+    </form>
+
+    <!-- Create account link -->
+    <a href="/register" class="create-account-link" th:text="#{login.create-link}"></a>
+</div>
+
+<!-- Language selector by fragment -->
+<div th:replace="fragment/language-selector :: languageSelector"></div>
+
+</body>
+</html>

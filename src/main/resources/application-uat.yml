@@ -4,9 +4,6 @@ spring:
     username: root
     password: password123
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      leak-detection-threshold: 2000
-      #default maximum-pool-size:
-      #default minimum-idle:
-      #default idle-timeout:
-      #default max-lifetime:
+  h2:
+    console:
+      enabled: false

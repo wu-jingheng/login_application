@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{home.tab-title}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+
+    <!-- Display of user information -->
+    <h2>
+    <span th:text="#{home.welcome-label} + ' ' + ${appUserDto.name}">John Doe</span></h2>
+    <div class="user-info">
+        <p><b th:text="#{home.username-label} + ' '"></b><span th:text="${appUserDto.username}">john.doe</span></p>
+        <p><b th:text="#{home.role-label} + ' '"></b><span th:text="${appUserDto.role}">User</span></p>
+    </div>
+
+    <!-- Manager-exclusive button (only visible for MANAGER & ADMIN roles) -->
+    <button th:if="${appUserDto.role == 'Manager'} or ${appUserDto.role == 'Admin'}" th:text="#{home.manager-page-submit}"
+            onclick="window.location.href='/user/manager-exclusive'"></button>
+
+    <!-- Logout button -->
+    <form th:action="@{/logout}" method="POST">
+        <button type="submit" th:text="#{home.logout-label}"></button>
+    </form>
+</div>
+
+<!-- Language selector by fragment -->
+<div th:replace="fragment/language-selector :: languageSelector"></div>
+
+</body>
+</html>
