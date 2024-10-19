@@ -33,6 +33,7 @@ public class AccountController {
     @PostMapping("${app.endpoints.register-user}")
     public String createUser(@ModelAttribute AppUser newAppUser) {
         newAppUser.setPassword(passwordEncoder.encode(newAppUser.getPassword()));
+        newAppUser.setRole(newAppUser.getRole().toUpperCase());
         appUserDetailsService.saveUser(newAppUser);
 
         String redirectPath = appDetails.getPagePath(PageKey.REGISTER);
