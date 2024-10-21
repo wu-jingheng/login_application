@@ -1,5 +1,6 @@
 package com.wjh.login_application.model;
 
+import com.wjh.login_application.utility.RoleKey;
 import jakarta.persistence.*;
 import lombok.Generated;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 public class AppUser {
 
     public AppUser() {
-        this.role = "USER"; // By default, new users will have their role set as USER
+        this.role = RoleKey.USER.getValue(); // By default, new users will have their role set as USER
     }
 
     @Id
